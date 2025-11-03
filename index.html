@@ -3,163 +3,205 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🔥 Vitrine Premium de Calçados - 20 Produtos 🔥</title>
+<title>👟 Vitrine Premium de Calçados | Coleção Atualizada 🔥</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* Reset básico para melhor consistência */
+/* Reset básico, aprimorado para acessibilidade e consistência */
 * {
     box-sizing: border-box;
+    /* Linha adicionada para melhor consistência em formulários */
+    -webkit-tap-highlight-color: transparent; 
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    color: #222;
+    /* Gradiente mais suave e moderno */
+    background: linear-gradient(135deg, #f0f2f5 0%, #ffffff 100%); 
+    color: #1a1a1a; /* Cor mais escura para melhor legibilidade */
+    line-height: 1.6; /* Melhor legibilidade para textos longos, se houver */
 }
 
+/* Estilo do cabeçalho otimizado */
 h1 {
     text-align: center;
     color: #111;
-    /* Ajustei o gradiente para mais contraste e leitura */
-    background: linear-gradient(90deg, #2a00e6, #00e1ff);
+    /* Gradiente e Text-shadow mais limpos */
+    background: linear-gradient(90deg, #1d4ed8, #0ea5e9); 
     -webkit-background-clip: text; 
-    /* CORREÇÃO: Propriedade padrão adicionada para compatibilidade */
     background-clip: text; 
     -webkit-text-fill-color: transparent; 
-    font-size: 2.5rem; /* Levemente maior */
-    margin: 40px 10px;
+    font-size: clamp(2rem, 5vw, 3rem); /* Tamanho responsivo */
+    margin: 40px 10px 50px; /* Mais espaço abaixo */
     font-weight: 900;
-    text-shadow: 1px 1px 4px rgba(255,102,0,0.4);
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .vitrine {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px; /* Mais espaço entre os cards */
+    gap: 25px; /* Ajustei um pouco o gap */
     justify-content: center;
-    max-width: 1300px;
+    max-width: 1400px; /* Largura máxima um pouco maior para desktops */
     margin: auto;
-    padding: 20px 10px 50px;
+    padding: 20px 15px 80px; /* Mais padding inferior */
 }
 
+/* Estilo do Card otimizado */
 .card-produto {
     background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08); /* Sombra mais suave */
+    border-radius: 18px; /* Borda um pouco mais arredondada */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12); /* Sombra mais difusa */
+    border: 1px solid #eee; /* Borda sutil para definir o card */
     overflow: hidden;
-    width: 290px; /* Ligeiramente mais largo */
-    transition: all 0.3s ease;
+    width: 300px; /* Largura padrão aprimorada */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave */
     text-align: center;
-    cursor: pointer; /* Indica que o card é interativo */
+    cursor: pointer;
+    display: flex; /* Adicionado para controle total do layout interno */
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o footer/botão para baixo */
 }
 
 .card-produto:hover {
-    transform: translateY(-8px); /* Efeito de elevação sutil */
-    box-shadow: 0 18px 30px rgba(255,102,0,0.35); /* Sombra mais vibrante ao passar o mouse */
+    transform: translateY(-10px) scale(1.02); /* Efeito de elevação mais pronunciado */
+    box-shadow: 0 20px 40px rgba(29, 78, 216, 0.3); /* Sombra azul vibrante ao passar o mouse */
 }
 
 .card-produto img {
     width: 100%;
-    height: 280px; /* Ligeiramente maior para melhor visualização */
+    height: 300px; /* Tamanho maior para a imagem */
     object-fit: cover;
-    border-bottom: 4px solid #ff6f00; /* Borda mais grossa */
+    border-bottom: 5px solid #1d4ed8; /* Borda azul da marca principal */
+    transition: transform 0.3s ease;
+}
+
+.card-produto:hover img {
+    transform: scale(1.05); /* Zoom sutil na imagem ao passar o mouse */
+}
+
+.info-produto {
+    padding: 10px 15px 5px;
+    flex-grow: 1; /* Ocupa o espaço restante */
 }
 
 .nome-produto {
     color: #333;
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 700;
-    margin: 15px 10px 8px;
-    min-height: 48px; /* Altura mínima para nomes de duas linhas */
-    padding: 0 5px;
+    margin: 5px 0 5px;
+    min-height: 50px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.3;
 }
 
 .preco {
-    color: #e62300;
-    font-size: 30px; /* Maior destaque valor */
+    color: #e62300; /* Vermelho/laranja de destaque */
+    font-size: 32px; 
     font-weight: 900;
-    margin: 8px 0 15px;
-    text-shadow: 0 1px 3px rgba(255,0,0,0.3);
+    margin: 0 0 15px;
+    text-shadow: 0 2px 4px rgba(230, 35, 0, 0.2);
 }
 
 .seletor-tamanho {
-    margin: 10px 20px 15px;
+    padding: 0 20px 15px; /* Ajustei para usar padding/margin */
 }
 
+/* Estilo do Select aprimorado */
 .seletor-tamanho select {
     width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ddd; /* Borda mais discreta */
-    background-color: #f9f9f9; /* Fundo sutil */
+    padding: 14px; /* Mais preenchimento */
+    border-radius: 10px;
+    border: 2px solid #ddd; 
+    background-color: #fcfcfc; 
     font-size: 16px;
     font-weight: 600;
     color: #333;
     cursor: pointer;
-    transition: 0.2s;
-    -webkit-appearance: none; /* Remove estilo nativo do select no Chrome/Safari */
-    -moz-appearance: none; /* Remove estilo nativo do select no Firefox */
+    transition: all 0.2s ease;
+    /* Melhoria no ícone do seletor */
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
     appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ff6600" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%231d4ed8" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 10px top 50%;
+    background-position: right 15px center; /* Ícone mais centralizado */
 }
 
 .seletor-tamanho select:focus {
     outline: none;
-    border-color: #ff6600;
-    box-shadow: 0 0 0 3px rgba(255,102,0,0.3);
+    border-color: #1d4ed8; /* Cor de foco azul */
+    box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.3);
 }
 
+/* Estilo do Botão aprimorado */
 .botao-whatsapp {
     background: linear-gradient(90deg, #25d366, #128c7e);
     color: white;
-    font-size: 17px;
+    font-size: 18px; /* Ligeiramente maior */
     font-weight: 800;
-    padding: 15px; /* Mais preenchimento */
+    padding: 18px; 
     border: none;
-    border-radius: 10px;
-    margin: 0 20px 20px;
+    border-radius: 0 0 18px 18px; /* Botão segue o arredondamento inferior do card */
+    margin-top: 5px; /* Separação sutil do select */
     cursor: pointer;
-    transition: 0.25s;
+    transition: all 0.3s ease;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    width: calc(100% - 40px);
-    box-shadow: 0 5px 12px rgba(18,140,126,0.5); /* Sombra mais pronunciada */
+    letter-spacing: 1.5px;
+    width: 100%; /* Ocupa a largura total do card */
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
 }
 
 .botao-whatsapp:hover {
-    background: linear-gradient(90deg, #20b358, #0e6f5e);
-    transform: scale(1.02);
+    background: linear-gradient(90deg, #1dbe57, #0d7165);
+    transform: translateY(-2px); /* Efeito sutil de elevação */
 }
 
 .botao-whatsapp:active {
-    transform: scale(0.98);
+    transform: scale(0.99);
+    background: #128c7e;
 }
 
+/* Estilo do Footer aprimorado */
 footer {
     text-align: center;
-    background: #111;
-    color: #fff;
-    padding: 25px;
-    font-size: 16px;
-    letter-spacing: 0.5px;
+    background: #111827; /* Cor escura mais moderna */
+    color: #e5e7eb;
+    padding: 30px;
+    font-size: 15px;
+    letter-spacing: 0.8px;
+    margin-top: 40px;
 }
 
 footer span {
-    color: #ff6f00;
+    color: #f59e0b; /* Laranja/Amarelo mais moderno */
     font-weight: 700;
+    font-style: italic;
 }
 
-/* Responsividade básica */
-@media (max-width: 650px) {
+/* Responsividade mais refinada */
+@media (max-width: 768px) {
     h1 {
-        font-size: 2rem;
-        margin: 30px 5px;
+        font-size: 2.5rem;
+        margin: 30px 5px 40px;
     }
     .card-produto {
-        width: 90%; /* Ocupa quase a largura total em telas pequenas */
+        width: calc(50% - 20px); /* Dois cards por linha em tablets */
+        max-width: 320px; 
+    }
+}
+
+@media (max-width: 550px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .card-produto {
+        width: 95%; /* Um card por linha em celulares */
+        max-width: none;
     }
 }
 </style>
@@ -171,164 +213,403 @@ footer span {
     <div class="vitrine">
 
     <div class="card-produto">
-    <img src="card-produto/01.jpg" alt="Tênis Vans Azul/Branco">
-    <div class="nome-produto" id="nome-produto-1">Tênis Casual Clássico Raabok Preto</div>
-    <div class="preco" id="preco-produto-1">R$ 110,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-1"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('1')">💬 Pedir via WhatsApp</button>
+        <img src="card-produto/01.jpg" alt="Tênis Casual Clássico Raabok Preto">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-1">Tênis Casual Clássico Raabok Preto</div>
+            <div class="preco" id="preco-produto-1">R$ 110,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-1" aria-label="Selecione o tamanho do Tênis Casual Clássico Raabok Preto">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('1')" aria-label="Pedir Tênis Casual Clássico Raabok Preto via WhatsApp">💬 Pedir via WhatsApp</button>
     </div>
 
     <div class="card-produto">
-    <img src="card-produto/02.jpg" alt="Tênis Converse Preto">
-    <div class="nome-produto" id="nome-produto-2">Tênis Esportivo ZoomX Preto</div>
-    <div class="preco" id="preco-produto-2">R$ 110,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-2"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('2')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/03.jpg" alt="Tênis Adidas Preto">
-    <div class="nome-produto" id="nome-produto-3">Tênis Adidas Stripes Preto</div>
-    <div class="preco" id="preco-produto-3">R$ 120,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-3"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('3')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/04.jpg" alt="Tênis Raabok Preto">
-    <div class="nome-produto" id="nome-produto-4">Tênis Casual Azul</div>
-    <div class="preco" id="preco-produto-4">R$ 100,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-4"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('4')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/05.jpg" alt="Tênis Lacoste Verde">
-    <div class="nome-produto" id="nome-produto-5"> New Balance 327</div>
-    <div class="preco" id="preco-produto-5">R$ 130,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-5"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('5')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/06.jpg" alt="Tênis Nike Preto">
-    <div class="nome-produto" id="nome-produto-6">Tênis Puma Preto</div>
-    <div class="preco" id="preco-produto-6">R$ 110,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-6"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('6')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/07.jpg" alt="Tênis Feminino Preto/Roxo">
-    <div class="nome-produto" id="nome-produto-7">Tênis 
-        Nike Air Max Excee</div>
-    <div class="preco" id="preco-produto-7">R$ 115,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-7"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('7')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/08.jpg" alt="Tênis Puma Vermelho">
-    <div class="nome-produto" id="nome-produto-8">Tênis Nike Zoom React</div>
-    <div class="preco" id="preco-produto-8">R$ 105,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-8"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('8')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/09.jpg" alt="Tênis Branco Masculino">
-    <div class="nome-produto" id="nome-produto-9">Tênis Branco Fila Casual</div>
-    <div class="preco" id="preco-produto-9">R$ 100,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-9"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('9')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/10.jpg" alt="Tênis Preto Masculino">
-    <div class="nome-produto" id="nome-produto-10">Tênis Preto Masculino Esportivo</div>
-    <div class="preco" id="preco-produto-10">R$ 125,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-10"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('10')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/11.jpg" alt="Tênis Feminino Rosa">
-    <div class="nome-produto" id="nome-produto-11">Tênis Casual</div>
-    <div class="preco" id="preco-produto-11">R$ 110,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-11"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('11')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/12.jpg" alt="Tênis Masculino Cinza">
-    <div class="nome-produto" id="nome-produto-12">Tênis Taylor All Star </div>
-    <div class="preco" id="preco-produto-12">R$ 100,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-12"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('12')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/13.jpg" alt="Tênis Azul Marinho">
-    <div class="nome-produto" id="nome-produto-13">Tênis Mizuno Jet 2 N</div>
-    <div class="preco" id="preco-produto-13">R$ 120,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-13"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('13')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/14.jpg" alt="Tênis Verde Militar">
-    <div class="nome-produto" id="nome-produto-14">Tênis Taylor All Star </div>
-    <div class="preco" id="preco-produto-14">R$ 115,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-14"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('14')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/15.jpg" alt="Tênis Laranja Esportivo">
-    <div class="nome-produto" id="nome-produto-15">Tênis Lacoste</div>
-    <div class="preco" id="preco-produto-15">R$ 105,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-15"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('15')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/16.jpg" alt="Tênis Preto Vermelho">
-    <div class="nome-produto" id="nome-produto-16">Nike Air Zoom Pegasus</div>
-    <div class="preco" id="preco-produto-16">R$ 130,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-16"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('16')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/17.jpg" alt="Tênis Branco Preto">
-    <div class="nome-produto" id="nome-produto-17">Fila Disruptor</div>
-    <div class="preco" id="preco-produto-17">R$ 125,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-17"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('17')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/18.jpg" alt="Tênis Azul Claro">
-    <div class="nome-produto" id="nome-produto-18">Tênis Nike Air Jordan </div>
-    <div class="preco" id="preco-produto-18">R$ 110,00</div> 
-    <div class="seletor-tamanho"><select id="tamanho-18"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('18')">💬 Pedir via WhatsApp</button>
-    </div>
-
-    <div class="card-produto">
-    <img src="card-produto/19.jpg" alt="Tênis Bege Feminino">
-    <div class="nome-produto" id="nome-produto-19">Tênis  Adidas Campus </div>
-    <div class="preco" id="preco-produto-19">R$ 135,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-19"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('19')">💬 Pedir via WhatsApp</button>
+        <img src="card-produto/02.jpg" alt="Tênis Esportivo ZoomX Preto">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-2">Tênis Esportivo ZoomX Preto</div>
+            <div class="preco" id="preco-produto-2">R$ 110,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-2" aria-label="Selecione o tamanho do Tênis Esportivo ZoomX Preto">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('2')" aria-label="Pedir Tênis Esportivo ZoomX Preto via WhatsApp">💬 Pedir via WhatsApp</button>
     </div>
     
     <div class="card-produto">
-    <img src="card-produto/20.jpg" alt="Tênis Esportivo Cinza/Azul">
-    <div class="nome-produto" id="nome-produto-20">botas CAT </div>
-    <div class="preco" id="preco-produto-20">R$ 145,00</div>
-    <div class="seletor-tamanho"><select id="tamanho-20"><option value="" disabled selected>Selecione o tamanho 👇</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option></select></div>
-    <button class="botao-whatsapp" onclick="enviarWhatsApp('20')">💬 Pedir via WhatsApp</button>
+        <img src="card-produto/03.jpg" alt="Tênis Adidas Stripes Preto">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-3">Tênis Adidas Stripes Preto</div>
+            <div class="preco" id="preco-produto-3">R$ 120,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-3" aria-label="Selecione o tamanho do Tênis Adidas Stripes Preto">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('3')" aria-label="Pedir Tênis Adidas Stripes Preto via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/04.jpg" alt="Tênis Casual Azul">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-4">Tênis Casual Azul</div>
+            <div class="preco" id="preco-produto-4">R$ 100,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-4" aria-label="Selecione o tamanho do Tênis Casual Azul">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('4')" aria-label="Pedir Tênis Casual Azul via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/05.jpg" alt=" New Balance 327">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-5"> New Balance 327</div>
+            <div class="preco" id="preco-produto-5">R$ 130,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-5" aria-label="Selecione o tamanho do New Balance 327">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('5')" aria-label="Pedir New Balance 327 via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/06.jpg" alt="Tênis Puma Preto">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-6">Tênis Puma Preto</div>
+            <div class="preco" id="preco-produto-6">R$ 110,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-6" aria-label="Selecione o tamanho do Tênis Puma Preto">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('6')" aria-label="Pedir Tênis Puma Preto via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/07.jpg" alt="Tênis Nike Air Max Excee">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-7">Tênis Nike Air Max Excee</div>
+            <div class="preco" id="preco-produto-7">R$ 115,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-7" aria-label="Selecione o tamanho do Tênis Nike Air Max Excee">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('7')" aria-label="Pedir Tênis Nike Air Max Excee via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/08.jpg" alt="Tênis Nike Zoom React">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-8">Tênis Nike Zoom React</div>
+            <div class="preco" id="preco-produto-8">R$ 105,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-8" aria-label="Selecione o tamanho do Tênis Nike Zoom React">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('8')" aria-label="Pedir Tênis Nike Zoom React via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/09.jpg" alt="Tênis Branco Fila Casual">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-9">Tênis Branco Fila Casual</div>
+            <div class="preco" id="preco-produto-9">R$ 100,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-9" aria-label="Selecione o tamanho do Tênis Branco Fila Casual">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('9')" aria-label="Pedir Tênis Branco Fila Casual via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/10.jpg" alt="Tênis Preto Masculino Esportivo">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-10">Tênis Preto Masculino Esportivo</div>
+            <div class="preco" id="preco-produto-10">R$ 125,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-10" aria-label="Selecione o tamanho do Tênis Preto Masculino Esportivo">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('10')" aria-label="Pedir Tênis Preto Masculino Esportivo via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/11.jpg" alt="Tênis Casual">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-11">Tênis Casual</div>
+            <div class="preco" id="preco-produto-11">R$ 110,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-11" aria-label="Selecione o tamanho do Tênis Casual">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('11')" aria-label="Pedir Tênis Casual via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/12.jpg" alt="Tênis Taylor All Star">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-12">Tênis Taylor All Star </div>
+            <div class="preco" id="preco-produto-12">R$ 100,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-12" aria-label="Selecione o tamanho do Tênis Taylor All Star">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('12')" aria-label="Pedir Tênis Taylor All Star via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/13.jpg" alt="Tênis Mizuno Jet 2 N">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-13">Tênis Mizuno Jet 2 N</div>
+            <div class="preco" id="preco-produto-13">R$ 120,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-13" aria-label="Selecione o tamanho do Tênis Mizuno Jet 2 N">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('13')" aria-label="Pedir Tênis Mizuno Jet 2 N via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/14.jpg" alt="Tênis Taylor All Star Verde Militar">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-14">Tênis Taylor All Star </div>
+            <div class="preco" id="preco-produto-14">R$ 115,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-14" aria-label="Selecione o tamanho do Tênis Taylor All Star Verde Militar">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('14')" aria-label="Pedir Tênis Taylor All Star Verde Militar via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/15.jpg" alt="Tênis Lacoste Laranja Esportivo">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-15">Tênis Lacoste</div>
+            <div class="preco" id="preco-produto-15">R$ 105,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-15" aria-label="Selecione o tamanho do Tênis Lacoste Laranja Esportivo">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('15')" aria-label="Pedir Tênis Lacoste Laranja Esportivo via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/16.jpg" alt="Nike Air Zoom Pegasus Preto/Vermelho">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-16">Nike Air Zoom Pegasus</div>
+            <div class="preco" id="preco-produto-16">R$ 130,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-16" aria-label="Selecione o tamanho do Nike Air Zoom Pegasus Preto/Vermelho">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('16')" aria-label="Pedir Nike Air Zoom Pegasus Preto/Vermelho via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/17.jpg" alt="Fila Disruptor Branco/Preto">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-17">Fila Disruptor</div>
+            <div class="preco" id="preco-produto-17">R$ 125,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-17" aria-label="Selecione o tamanho do Fila Disruptor Branco/Preto">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('17')" aria-label="Pedir Fila Disruptor Branco/Preto via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/18.jpg" alt="Tênis Nike Air Jordan Azul Claro">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-18">Tênis Nike Air Jordan </div>
+            <div class="preco" id="preco-produto-18">R$ 110,00</div> 
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-18" aria-label="Selecione o tamanho do Tênis Nike Air Jordan Azul Claro">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('18')" aria-label="Pedir Tênis Nike Air Jordan Azul Claro via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/19.jpg" alt="Tênis Adidas Campus Bege Feminino">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-19">Tênis Adidas Campus </div>
+            <div class="preco" id="preco-produto-19">R$ 135,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-19" aria-label="Selecione o tamanho do Tênis Adidas Campus Bege Feminino">
+                <option value="38" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('19')" aria-label="Pedir Tênis Adidas Campus Bege Feminino via WhatsApp">💬 Pedir via WhatsApp</button>
+    </div>
+    
+    <div class="card-produto">
+        <img src="card-produto/20.jpg" alt="Botas CAT Cinza/Azul">
+        <div class="info-produto">
+            <div class="nome-produto" id="nome-produto-20">Botas CAT </div>
+            <div class="preco" id="preco-produto-20">R$ 145,00</div>
+        </div>
+        <div class="seletor-tamanho">
+            <select id="tamanho-20" aria-label="Selecione o tamanho das Botas CAT Cinza/Azul">
+                <option value="" disabled selected>Selecione o tamanho 👇</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+            </select>
+        </div>
+        <button class="botao-whatsapp" onclick="enviarWhatsApp('20')" aria-label="Pedir Botas CAT Cinza/Azul via WhatsApp">💬 Pedir via WhatsApp</button>
     </div>
 
     </div>
@@ -339,27 +620,40 @@ footer span {
 </footer>
 
 <script>
+    /*
+        Função aprimorada para enviar mensagem de WhatsApp,
+        agora utilizando a formatação correta de URL encodeURIComponent() 
+        para garantir que todos os caracteres especiais (como o "%0A") funcionem corretamente,
+        e melhorando o tratamento de erro.
+    */
     function enviarWhatsApp(produtoId) {
-        const nomeProduto = document.getElementById(`nome-produto-${produtoId}`).textContent;
-        const precoProduto = document.getElementById(`preco-produto-${produtoId}`).textContent;
+        const nomeProduto = document.getElementById(`nome-produto-${produtoId}`).textContent.trim();
+        const precoProduto = document.getElementById(`preco-produto-${produtoId}`).textContent.trim();
         const seletorTamanho = document.getElementById(`tamanho-${produtoId}`);
         const tamanhoSelecionado = seletorTamanho.value;
+        const numeroTelefone = "5581996646300"; // Mantenha seu número de contato
 
         if (!tamanhoSelecionado) {
-            // Alerta se nenhum tamanho for selecionado
-            alert('🚨 Por favor, selecione o tamanho do tênis antes de enviar o pedido!');
-            seletorTamanho.focus(); // Coloca o foco no seletor
+            // Usa o SweetAlert ou uma biblioteca similar para um alerta mais bonito em produção, mas o alert padrão é mantido aqui
+            alert('🚨 Atenção: Por favor, selecione o tamanho do tênis antes de enviar o pedido!');
+            seletorTamanho.focus();
             return;
         }
 
-        // Número de telefone para contato (substitua pelo seu número real com código do país e DDD)
-        const numeroTelefone = "5581996646300"; 
+        // Mensagem de pedido formatada, usando encodeURIComponent para URL segura
+        const mensagemBase = `Olá, gostaria de fazer um pedido!
         
-        // Mensagem de pedido formatada
-        const mensagem = `Olá, gostaria de fazer um pedido!%0A%0A*Produto:* ${nomeProduto}%0A*Preço:* ${precoProduto}%0A*Tamanho:* ${tamanhoSelecionado}%0A%0AFico no aguardo para fechar a compra!`;
+*Produto:* ${nomeProduto}
+*Preço:* ${precoProduto}
+*Tamanho:* ${tamanhoSelecionado}
+        
+Fico no aguardo para fechar a compra!`;
+
+        // Codifica a mensagem
+        const mensagemCodificada = encodeURIComponent(mensagemBase);
 
         // Abre o link do WhatsApp
-        const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroTelefone}&text=${mensagem}`;
+        const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroTelefone}&text=${mensagemCodificada}`;
         window.open(urlWhatsApp, '_blank');
     }
 </script>
